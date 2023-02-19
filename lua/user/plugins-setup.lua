@@ -36,6 +36,8 @@ return packer.startup(function(use)
     -- file explorer
     use("nvim-tree/nvim-tree.lua")
 
+    use("nvim-lualine/lualine.nvim")
+
     if packer_bootstrap then
         require("packer").sync()
     end
