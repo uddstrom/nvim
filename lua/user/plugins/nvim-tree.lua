@@ -1,3 +1,4 @@
+-- Nvim-tree is a file exporer with git integraion for neovim.
 local setup, nvimtree = pcall(require, "nvim-tree")
 if not setup then
     return

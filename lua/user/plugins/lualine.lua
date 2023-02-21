@@ -1,3 +1,4 @@
+-- NeoVim status bar.
 local status, lualine = pcall(require, "lualine")
 if not status then
     return

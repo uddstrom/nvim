@@ -1,3 +1,6 @@
+-- LSP - Language Server Protocol
+-- Gives autocompeletion, etc.
+
 local lsp = require('lsp-zero').preset({
   name = 'minimal',
   set_lsp_keymaps = true,
