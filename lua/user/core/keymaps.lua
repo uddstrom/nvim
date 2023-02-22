@@ -1,15 +1,28 @@
+local opts = { noremap = true, silent = true }
+
+-- Shorten function name
+local keymap = vim.api.nvim_set_keymap
+
+-- Remap space as leader key
+keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
-local keymap = vim.keymap
+-- General keymaps
+keymap("i", "jk", "<ESC>", opts) -- switch mode to Normal
 
--- general keymaps
-
-keymap.set("i", "jk", "<ESC>")
-
-keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
-keymap.set("n", "<leader>sx", ":close<CR>") -- close current split windows
+-- Window management --
+-- navigate
+keymap("n", "<C-h>", "<C-w>h", opts) -- focus left
+keymap("n", "<C-j>", "<C-w>j", opts) -- focus down
+keymap("n", "<C-k>", "<C-w>k", opts) -- focus up
+keymap("n", "<C-l>", "<C-w>l", opts) -- focus right
+keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", opts)
+-- resize
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
