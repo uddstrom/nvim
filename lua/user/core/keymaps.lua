@@ -24,5 +24,9 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+-- terminal
+keymap("n", "<leader>ttv", ":vs|:terminal<CR>", opts)
+keymap("n", "<leader>tth", ":split|:terminal<CR>", opts)
+
 -- nvim-tree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
